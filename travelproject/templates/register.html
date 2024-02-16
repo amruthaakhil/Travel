@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <style>
+            h1
+            {
+            text-align:center;
+            }
+        input[type=text]
+        {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        text-align:center;
+        }
+        input[type=password]
+        {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        text-align:center;
+        }
+         input[type=email]
+        {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        text-align:center;
+        }
+        input[type=submit]
+        {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        text-align:center;
+        }
+        input[type=placeholder]
+        {
+        text-align: center;
+        }
+        .container
+        {
+        margin: auto;
+        width: 50%;
+        padding: 10px;
+        }
+
+        body
+        {
+        background-color: Bisque;
+        background-image: radial-gradient(circle,LightGreen,MediumAquamarine);
+        }
+        </style>
+    <meta charset="UTF-8">
+    <title>register</title>
+</head>
+<body>
+<h1>REGISTRATION</h1>
+<div class="container">
+<form action="register" method="post">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="Enter your Username"><br>
+    <input type="text" name="first_name" placeholder="Enter your First name"><br>
+    <input type="text" name="last_name" placeholder="Enter your Last name"><br>
+    <input type="email" name="email" placeholder="Enter your Email id"><br>
+    <input type="password" name="password" placeholder="Enter your Password"><br>
+    <input type="password" name="password1" placeholder="Confirm Your Password"><br>
+    <input type="submit">
+</form>
+    </div>
+{% for msg in messages %}
+<h2>{{msg}}</h2>
+{% endfor %}
+</body>
+</html>
